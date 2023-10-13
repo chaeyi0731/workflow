@@ -15,4 +15,7 @@
   width: 30vw;
   height: 80vh;
   background-color: antiquewhite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
