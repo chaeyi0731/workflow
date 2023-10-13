@@ -9,4 +9,5 @@ for (let i = 0; i < img.length; i++) {
     img[i].style.backgroundColor = "red";
   });
 }
-console.log(img);
+
+const mandoo = [img[0], img[2], img[3], img[9], img[10], img[11]];
