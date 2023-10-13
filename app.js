@@ -1,7 +1,8 @@
 // 서버 파일
 const http = require("http");
 const fs = require("fs");
-const js = require("./func");
+const func = require("func.js");
+
 const server = http.createServer((req, res) => {
   console.log(req.method);
   console.log(req.url);
