@@ -8,7 +8,7 @@
 }
 #root > div:nth-child(1) {
   width: 50vw;
-  height: 80vh;
+  height: 90vh;
   background-color: aliceblue;
   display: flex;
   justify-content: space-around;
@@ -17,7 +17,7 @@
 }
 #root > div:nth-child(2) {
   width: 30vw;
-  height: 80vh;
+  height: 90vh;
 
   display: flex;
   justify-content: center;
@@ -27,6 +27,10 @@ button {
   width: 50vw;
   height: 30vw;
   border: 1px solid black;
+}
+
+#root > div:nth-child(1) > div {
+  margin: 3px;
 }
 
 #root > div:nth-child(1) > div:nth-child(1) {
