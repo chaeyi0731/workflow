@@ -8,6 +8,6 @@ const server = http.createServer((req, res) => {
 
   res.writeHead(200, { "Contant-Type": "text/html" });
   let doc = "<html> <head> <body> <h1> hello </h1></body> </head></html>";
-  response.end(doc);
+  res.end(doc);
 });
 server.listen(8080);
