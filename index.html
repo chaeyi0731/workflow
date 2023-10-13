@@ -8,7 +8,7 @@
   </head>
   <body>
     <div id="root">
-      <div>
+      <div class="divId">
         <div></div>
         <div></div>
         <div></div>
@@ -28,6 +28,9 @@
         <button id="button">제출</button>
       </div>
     </div>
-    <script type="text/javascript" src="/func.js"></script>
+    <script type="text/javascript" src="/func.js">
+              var tmp_path = URL.createObjectURL('path/to/image.png');
+      document.querySelector('divId').style.background = url(tmp_path);
+    </script>
   </body>
 </html>
