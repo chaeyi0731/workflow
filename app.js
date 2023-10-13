@@ -1,1 +1,1 @@
-console.log("hello");
+// 서버 파일
