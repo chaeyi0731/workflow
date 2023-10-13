@@ -11,3 +11,5 @@ for (let i = 0; i < img.length; i++) {
 }
 
 const mandoo = [img[0], img[2], img[3], img[9], img[10], img[11]];
+
+button.addEventListener("click", () => {});
