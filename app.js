@@ -1,7 +1,6 @@
 // 서버 파일
 const http = require("http");
 const fs = require("fs");
-const func = require("func.js");
 
 const server = http.createServer((req, res) => {
   console.log(req.method);
@@ -10,9 +9,18 @@ const server = http.createServer((req, res) => {
   res.writeHead(200, { "Contant-Type": "text/html" });
 
   if (req.url === "/") {
-    fs.readFile("./index.html", function (err, data) {
+    fs.readFile("./index.html", (err, data) => {
       if (err) {
         console.err("파일을 읽지 못했습니다.");
+      } else {
+        res.end(data);
+      }
+    });
+  }
+  if (req.url === "/") {
+    fs.readFile("./style.css", (err, data) => {
+      if (err) {
+        console.err("파일을 읽지 못했어용");
       } else {
         res.end(data);
       }
