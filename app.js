@@ -2,13 +2,12 @@
 const http = require("http");
 const fs = require("fs");
 
-http.createServer((req, res) => {
+const server = http.createServer((req, res) => {
   console.log(request.method);
   console.log(request.url);
 
   res.writeHead(200, { "Contant-Type": "text/html" });
-  if (request.url === "/") {
-    console.log("메인입니다.");
-  }
+  let doc = "<html> <head> <body> <h1> hello </h1></body> </head></html>";
+  response.end(doc);
 });
 server.listen(8080);
