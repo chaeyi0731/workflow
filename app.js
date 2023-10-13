@@ -2,7 +2,7 @@
 const http = require("http");
 const fs = require("fs");
 const url = require("url");
-// const func = require("func.js");
+const func = require("func.js");
 const server = http.createServer((req, res) => {
   console.log(req.method);
   console.log(req.url);
@@ -20,6 +20,13 @@ const server = http.createServer((req, res) => {
     });
   } else if (pathname === "/style.css") {
     fs.readFile("./style.css", "utf8", (err, data) => {
+      res.writeHead(200);
+      res.write(data);
+      res.end();
+    });
+  }
+  if (req === "/") {
+    fs.readFile("/img", (err, data) => {
       res.writeHead(200);
       res.write(data);
       res.end();
