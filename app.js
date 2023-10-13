@@ -25,7 +25,7 @@ const server = http.createServer((req, res) => {
       res.end();
     });
   }
-  if (req === "/") {
+  if (req === "/img") {
     fs.readFile("/img", (err, data) => {
       res.writeHead(200);
       res.write(data);
