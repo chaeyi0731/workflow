@@ -9,3 +9,4 @@ for (let i = 0; i < img.length; i++) {
     img[i].style.backgroundColor = "red";
   });
 }
+console.log(img);
