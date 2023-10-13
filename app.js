@@ -2,7 +2,7 @@
 const http = require("http");
 const fs = require("fs");
 const url = require("url");
-const func = require("func.js");
+// const func = require("func.js");
 const server = http.createServer((req, res) => {
   console.log(req.method);
   console.log(req.url);
@@ -34,4 +34,11 @@ const server = http.createServer((req, res) => {
   }
 });
 server.listen(8080);
-//서버테스트 완료
+
+// const express = require("express");
+
+// const app = express();
+
+// app.listen(8080, () => {
+//   console.log(`8080 SERVER START!!`);
+// });
