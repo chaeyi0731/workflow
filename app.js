@@ -11,7 +11,7 @@ const server = http.createServer((req, res) => {
   const pathname = url.parse(pageURL, true).pathname;
 
   //* 응답받은 url이 "/"일떄
-  if (req.url === "/") {
+  if (pageURL === "/") {
     fs.readFile("./index.html", (err, data) => {
       if (err) {
         console.err("파일을 읽지 못했습니다.");
@@ -27,13 +27,6 @@ const server = http.createServer((req, res) => {
       res.end();
     });
   }
-  if (req === "/func.js") {
-    fs.readFile("/func.js", (err, data) => {
-      res.writeHead(200);
-      res.write(data);
-      res.end();
-    });
-  }
 
   if (req.url.startsWith("/img/")) {
     let imageName = path.basename(req.url);
@@ -44,7 +37,6 @@ const server = http.createServer((req, res) => {
         console.log(err);
         return;
       }
-
       res.writeHead(200, { "Contant-Type": "image/png" });
       res.end(data);
     });
