@@ -14,15 +14,15 @@ const server = http.createServer((req, res) => {
     fs.readFile("./index.html", (err, data) => {
       if (err) {
         console.err("파일을 읽지 못했습니다.");
-      } else if (pathname === "/style.css") {
-        fs.readFile("./style.css", "utf8", function (err, data) {
-          res.writeHead(200);
-          res.write(data);
-          res.end();
-        });
       } else {
         res.end(data);
       }
+    });
+  } else if (pathname === "/style.css") {
+    fs.readFile("./style.css", "utf8", (err, data) => {
+      res.writeHead(200);
+      res.write(data);
+      res.end();
     });
   }
 });
