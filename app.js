@@ -17,15 +17,6 @@ const server = http.createServer((req, res) => {
       }
     });
   }
-  if (req.url === "/") {
-    fs.readFile("./style.css", (err, data) => {
-      if (err) {
-        console.err("파일을 읽지 못했어용");
-      } else {
-        res.end(data);
-      }
-    });
-  }
 });
 server.listen(8080);
 //서버테스트 완료
