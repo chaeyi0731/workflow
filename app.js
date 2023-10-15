@@ -29,7 +29,7 @@ const server = http.createServer((req, res) => {
     });
   } else if (pathname === "/func.js") {
     fs.readFile("./func.js", (err, data) => {
-      res.writeHead(200);
+      res.writeHead(200, { "Contant-Type": "text/js" });
       res.write(data);
       res.end();
     });
