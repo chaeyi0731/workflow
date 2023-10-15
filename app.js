@@ -4,6 +4,7 @@ const fs = require("fs");
 const url = require("url");
 const path = require("path");
 // const func = require("func.js");
+
 const server = http.createServer((req, res) => {
   console.log(req.method);
   console.log(req.url);
@@ -26,9 +27,14 @@ const server = http.createServer((req, res) => {
       res.write(data);
       res.end();
     });
+  } else if (pathname === "/func.js") {
+    fs.readFile("./func.js", (err, data) => {
+      res.writeHead(200);
+      res.write(data);
+      res.end();
+    });
   }
-
-  if (req.url.startsWith("/img/")) {
+  if (pageURL.startsWith("/img/")) {
     let imageName = path.basename(req.url);
     let imagePath = "./img/" + imageName;
 
@@ -43,11 +49,3 @@ const server = http.createServer((req, res) => {
   }
 });
 server.listen(8080);
-
-// const express = require("express");
-
-// const app = express();
-
-// app.listen(8080, () => {
-//   console.log(`8080 SERVER START!!`);
-// });
