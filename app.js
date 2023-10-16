@@ -27,17 +27,10 @@ const server = http.createServer((req, res) => {
       res.write(data);
       res.end();
     });
-  } else if (pageURL.startsWith("/func.js")) {
-    fs.readFile("./func.js", (err, data) => {
-      res.writeHead(200);
-      res.write(data);
-      res.end();
-    });
   } else if (pageURL === "./func.js" && req.method === "GET") {
     fs.readFile("./func.js", "utf-8", (err, data) => {
       if (err) {
         console.log(err);
-        return;
       }
       res.writeHead(200, { "Content-type": "application/javascript" });
       res.end(data);
