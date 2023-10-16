@@ -8,12 +8,13 @@ for (let i = 0; i < img.length; i++) {
   img[i].addEventListener("click", () => {
     img[i].style.backgroundColor = "red";
   });
+  img[i].removeEventListener("click", () => {
+    img[i].style.backgroundColor = "";
+  });
 }
 
 button.addEventListener("click", () => {
   if (img[0] === true) {
     console.log("맞다");
-  } else {
-    console.log("아니다.");
   }
 });
