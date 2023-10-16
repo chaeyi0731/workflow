@@ -7,9 +7,9 @@ const button = document.getElementById("button");
 for (let i = 0; i < img.length; i++) {
   img[i].addEventListener("click", () => {
     img[i].style.backgroundColor = "red";
-  });
-  img[i].removeEventListener("click", () => {
-    img[i].style.backgroundColor = "";
+    img[i].removeEventListener("click", () => {
+      img[i].style.backgroundColor = "";
+    });
   });
 }
 
