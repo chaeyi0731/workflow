@@ -1,5 +1,3 @@
-const { Module } = require("module");
-
 const root = document.getElementById("root");
 console.dir(root);
 const img = root.children[0].children;
@@ -19,5 +17,3 @@ button.addEventListener("click", () => {
     console.log("아니다.");
   }
 });
-
-module.exports = func.js;
