@@ -11,6 +11,11 @@ const server = http.createServer((req, res) => {
   const pageURL = req.url;
   const pathname = url.parse(pageURL, true).pathname;
 
+  function serverErrorLog() {
+    res.writeHead(500);
+    return res.end("서버에 문제가 생겼습니다.");
+  }
+
   //* 응답받은 url이 "/"일떄
   if (pageURL === "/") {
     fs.readFile("./index.html", (err, data) => {
@@ -27,8 +32,8 @@ const server = http.createServer((req, res) => {
       res.write(data);
       res.end();
     });
-  } else if (pageURL === "./func.js" && req.method === "GET") {
-    fs.readFile("./func.js", "utf-8", (err, data) => {
+  } else if (pageURL === "/func.js") {
+    fs.readFile("./func.js", (err, data) => {
       if (err) {
         console.log(err);
       }
@@ -41,12 +46,14 @@ const server = http.createServer((req, res) => {
 
     fs.readFile(imagePath, (err, data) => {
       if (err) {
-        console.log(err);
-        return;
+        serverErrorLog();
       }
       res.writeHead(200, { "Contant-Type": "image/png" });
       res.end(data);
     });
+  } else {
+    res.writeHead(404);
+    res.end("Not Found");
   }
 });
 server.listen(8080);
