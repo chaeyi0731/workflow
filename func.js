@@ -5,13 +5,12 @@ console.dir(img);
 const button = document.getElementById("button");
 
 for (let i = 0; i < img.length; i++) {
-  img[i].addEventListener(
-    "click",
-    (even) => {
-      img[i].style.backgroundColor = "red";
-    },
-    { once: true }
-  );
+  img[i].addEventListener("click", function clicks() {
+    img[i].style.backgroundColor = "red";
+    () => {
+      removeEventListener("click", clicks);
+    };
+  });
 }
 
 button.addEventListener("click", () => {
