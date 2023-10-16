@@ -33,8 +33,16 @@ const server = http.createServer((req, res) => {
       res.write(data);
       res.end();
     });
-  }
-  if (pageURL.startsWith("/img/")) {
+  } else if (pageURL === "./func.js" && req.method === "GET") {
+    fs.readFile("./func.js", "utf-8", (err, data) => {
+      if (err) {
+        console.log(err);
+        return;
+      }
+      res.writeHead(200, { "Content-type": "application/javascript" });
+      res.end(data);
+    });
+  } else if (pageURL.startsWith("/img/")) {
     let imageName = path.basename(req.url);
     let imagePath = "./img/" + imageName;
 
