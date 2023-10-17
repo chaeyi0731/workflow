@@ -18,10 +18,11 @@
 #root > div:nth-child(2) {
   width: 30vw;
   height: 90vh;
-
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  text-align: center;
 }
 input {
   width: 30vw;
