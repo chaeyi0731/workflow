@@ -40,6 +40,7 @@ const server = http.createServer((req, res) => {
       res.writeHead(200, { "Content-type": "application/javascript" });
       res.end(data);
     });
+    //이미지는 이미지 마다 이름이 정해져있음
   } else if (pageURL.startsWith("/img/")) {
     let imageName = path.basename(req.url);
     let imagePath = "./img/" + imageName;
