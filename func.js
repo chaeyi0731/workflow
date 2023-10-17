@@ -23,7 +23,7 @@ button.onclick = () => {
     img[10].style.backgroundColor === "red" &&
     img[11].style.backgroundColor === "red"
   ) {
-    alert("고기만두");
+    alert(" 짜잔 ! 고기 만두🥩🥟");
   } else if (
     img[8].style.backgroundColor === "red" &&
     img[2].style.backgroundColor === "red" &&
@@ -32,8 +32,8 @@ button.onclick = () => {
     img[10].style.backgroundColor === "red" &&
     img[11].style.backgroundColor === "red"
   ) {
-    alert("새우만두");
+    alert(" 짜잔 ! 새우만두 🍤🥟");
   } else {
-    alert("만두 속 재료가 이상해!!");
+    alert("만두 속 재료가 이상해!! 🤢");
   }
 };
