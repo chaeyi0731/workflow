@@ -24,11 +24,7 @@
   align-items: center;
 }
 input {
-<<<<<<< HEAD
   width: 30vw;
-=======
-  width: 50vw;
->>>>>>> kimwoojin
   height: 30vw;
   border: 1px solid black;
   cursor: pointer;
